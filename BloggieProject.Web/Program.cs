@@ -1,3 +1,7 @@
+using BloggieProject.Entities.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 namespace BloggieProject.Web
 {
     public class Program
@@ -8,6 +12,8 @@ namespace BloggieProject.Web
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<BloggieProjectDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("BloggieProjectDbConnectionString")));
 
             var app = builder.Build();
 

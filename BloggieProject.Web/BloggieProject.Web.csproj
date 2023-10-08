@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BloggieProject.Entities\BloggieProject.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
